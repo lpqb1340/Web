@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = prompt("Nhap a");
+        var b = prompt("Nhap b");
+
+        var cong = document.createElement('button');
+        cong.textContent = "Cộng";
+        cong.onclick = () => {
+            alert("Kết quả: " + (parseInt(a) + parseInt(b)));
+        };
+        document.body.appendChild(cong);
+
+        var tru = document.createElement('button');
+        tru.textContent = "Trừ";
+        tru.onclick = () => {
+            alert("Kết quả: " + (parseInt(a) - parseInt(b)));
+        };
+        document.body.appendChild(tru);
+    </script>
+</body>
+
+</html>
