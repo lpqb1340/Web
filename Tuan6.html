@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputText" placeholder="Nhap so dien thoai">
+    <button onclick="addText()">Kiem Tra</button>
+    <p id="outputText"></p>
+
+    <script>
+        function addText() {
+            let inputText = document.getElementById("inputText").value;
+            let regex = /^(09|07|05|03)[0-9]{8}$/;
+            if (regex.test(inputText)) {
+                document.getElementById("outputText").innerText = "Valid input";
+            } else {
+                document.getElementById("outputText").innerText = "Invalid input";
+            }
+        }
+    </script>
+
+
+    <input type="text" id="inputText1" placeholder="Nhap mssv">
+    <button onclick="addText1()">Kiem Tra</button>
+    <p id="outputText1"></p>
+
+    <script>
+        function addText1() {
+            let inputText = document.getElementById("inputText1").value;
+            let regex = /^(246|247)[0-9]{5}$/;
+            if (regex.test(inputText)) {
+                document.getElementById("outputText1").innerText = "Valid input";
+            } else {
+                document.getElementById("outputText1").innerText = "Invalid input";
+            }
+        }
+    </script>
+
+
+    <input type="text" id="inputText2" placeholder="Ho ten">
+    <button onclick="addText2()">Kiem Tra</button>
+    <p id="outputText2"></p>
+
+    <script>
+        function addText2() {
+            let inputText = document.getElementById("inputText2").value;
+            let regex = /^[A-Za-z\s]+$/;
+            if (regex.test(inputText)) {
+                document.getElementById("outputText2").innerText = "Valid input";
+            } else {
+                document.getElementById("outputText2").innerText = "Invalid input";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
