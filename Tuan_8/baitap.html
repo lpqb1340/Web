@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 760px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        
+        .book {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        
+        .price {
+            color: #c0392b;
+            font-weight: bold;
+            margin: 4px 0;
+        }
+        
+        .featured {
+            background: #fff3cd;
+            border-color: #f1c40f;
+        }
+        
+        .selected {
+            background: #d6eaf8;
+        }
+        
+        .added {
+            background: #27ae60;
+            color: #fff;
+        }
+        
+        .error {
+            color: red;
+        }
+        
+        button {
+            padding: 6px 12px;
+            cursor: pointer;
+            margin: 4px 2px;
+        }
+        
+        input,
+        select {
+            padding: 6px;
+            margin: 4px 0;
+        }
+        
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="cover" src="https://via.placeholder.com/120x160" alt="Bìa sách">
+    <div id="book" data-id="12" data-genre="fiction">Nhà Giả Kim</div>
+    <label><input type="checkbox" id="agree"> Tôi đồng ý điều khoản</label>
+    <button id="btn-run">Chạy</button>
+    <div id="content" style="display: none;"></div>
+    <script>
+        $("#btn-run").on("click", function() {
+            // attr: đọc/ghi thuộc tính HTML
+            console.log("alt =", $("#cover").attr("alt"));
+            $("#cover").attr("alt", "Bìa Nhà Giả Kim");
+
+            // data: đọc thuộc tính data-*
+            console.log("id =", $("#book").data("id"));
+            console.log("genre =", $("#book").data("genre"));
+
+            // prop: dùng cho true/false (checked, disabled)
+            $("#agree").prop("checked", true);
+            console.log("Đã tick?", $("#agree").prop("checked"));
+
+
+            $("#btn-run").on("click", function() {
+                $("#content").html(`
+                    <h3>Nhà Giả Kim</h3>
+                    <p>Nội dung.</p>
+                    <p>Giá sách: 100.000 VNĐ</p>
+                `).show();
+            });
+        });
+    </script>
+</body>
+
+</html>

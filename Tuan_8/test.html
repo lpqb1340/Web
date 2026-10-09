@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sách</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 760px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        
+        .book {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .book img {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+        }
+        
+        .price {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        button,
+        select {
+            padding: 8px 12px;
+            margin-top: 10px;
+        }
+        
+        #content {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f2f8fc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Chọn sách</h2>
+
+    <!-- BƯỚC 1: Danh sách sách -->
+    <select id="book-select">
+        <option value="nha-gia-kim">Nhà Giả Kim</option>
+        <option value="dac-nhan-tam">Đắc Nhân Tâm</option>
+        <option value="tuoi-tre-dang-gia-bao-nhieu">
+            Tuổi Trẻ Đáng Giá Bao Nhiêu
+        </option>
+    </select>
+
+    <button id="btn-run">Chạy</button>
+
+    <!-- BƯỚC 2: Khuôn hiển thị thông tin sách -->
+    <div id="content" class="book">
+        <img id="cover" src="" alt="Bìa sách">
+
+        <h2 id="title"></h2>
+
+        <p>
+            <strong>Tác giả:</strong>
+            <span id="author"></span>
+        </p>
+
+        <p>
+            <strong>Thể loại:</strong>
+            <span id="genre"></span>
+        </p>
+
+        <p id="description"></p>
+
+        <p class="price" id="price"></p>
+    </div>
+
+    <script>
+        // BƯỚC 3: Dữ liệu của từng cuốn sách
+        const books = {
+            "nha-gia-kim": {
+                title: "Nhà Giả Kim",
+                author: "Paulo Coelho",
+                genre: "Tiểu thuyết",
+                description: "Câu chuyện về hành trình theo đuổi ước mơ và khám phá bản thân.",
+                price: "79.000 VNĐ",
+                cover: "https://placehold.co/120x160?text=Nha+Gia+Kim"
+            },
+
+            "dac-nhan-tam": {
+                title: "Đắc Nhân Tâm",
+                author: "Dale Carnegie",
+                genre: "Kỹ năng sống",
+                description: "Cuốn sách chia sẻ những nguyên tắc giao tiếp và xây dựng mối quan hệ.",
+                price: "95.000 VNĐ",
+                cover: "https://placehold.co/120x160?text=Dac+Nhan+Tam"
+            },
+
+            "tuoi-tre-dang-gia-bao-nhieu": {
+                title: "Tuổi Trẻ Đáng Giá Bao Nhiêu",
+                author: "Rosie Nguyễn",
+                genre: "Phát triển bản thân",
+                description: "Những chia sẻ về học tập, trải nghiệm và phát triển bản thân khi còn trẻ.",
+                price: "85.000 VNĐ",
+                cover: "https://placehold.co/120x160?text=Tuoi+Tre"
+            }
+        };
+
+        // BƯỚC 4: Nhấn nút để hiển thị sách
+        $("#btn-run").on("click", function() {
+
+            // Lấy mã sách đang được chọn
+            const id = $("#book-select").val();
+
+            // Lấy dữ liệu tương ứng
+            const book = books[id];
+
+            // Đổ dữ liệu vào khuôn HTML
+            $("#title").text(book.title);
+            $("#author").text(book.author);
+            $("#genre").text(book.genre);
+            $("#description").text(book.description);
+            $("#price").text("Giá: " + book.price);
+
+            $("#cover")
+                .attr("src", book.cover)
+                .attr("alt", "Bìa sách " + book.title);
+
+            // Hiển thị khuôn
+            $("#content").show();
+        });
+    </script>
+
+</body>
+
+</html>
