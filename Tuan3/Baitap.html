@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        grid-area: auto;
+        grid-template-areas: "header" "content" "promotion_1" "promotion_2" "gift" "footer";
+        gap: 10px;
+    }
+    
+    .container div.header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .container div.content {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container div.promotion_1 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container div.promotion_2 {
+        flex-direction: row-reverse;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container div.gift {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container div.footer {
+        color: white;
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+    }
+    
+    ul li {
+        display: inline-block;
+        margin: 10px;
+    }
+    
+    button {
+        background-color: green;
+        color: white;
+        padding: auto;
+        width: 150px;
+        height: 50px;
+    }
+    
+    #footer_text {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div id="container_list">
+                <ul>
+                    <li>Shop</li>
+                    <li>Offer</li>
+                    <li>Our Story</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div>
+                <img src="./promotions_images/Image 1.png" alt="">
+            </div>
+            <div>
+                <input type="text" placeholder="Search product...">
+                <img src="./promotions_images/shopping-cart.png" width="24" height="24" alt="">
+                <img src="./promotions_images/Avatar 1.png" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Promotions</h1>
+        </div>
+        <div class="promotion_1">
+            <div id="promotion_1_image">
+                <img src="./promotions_images/Image 1 (1).png" alt="">
+            </div>
+            <div id="promotion_1_text">
+                <h2>Promotion title</h2>
+                <p>Et ipsum irure amet cupidatat mollit exercitation consequat duis aliquip. Reprehenderit Lorem veninam pariatur esse pariatur in aute tempor au</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+        <div class="promotion_2">
+            <div id="promotion_2_image">
+                <img src="./promotions_images/Image 1 (2).png" alt="">
+            </div>
+            <div id="promotion_2_text">
+                <h2>Promotion title</h2>
+                <p>Et ipsum irure amet cupidatat mollit exercitation consequat duis aliquip. Reprehenderit Lorem veninam pariatur esse pariatur in aute tempor au</p>
+                <i>*Velit deserunt elit proident anim aipisicing.</i>
+                <button>Shop Now</button>
+            </div>
+        </div>
+        <div class="gift">
+            <img src="./promotions_images/image 1 (3).png" alt="" width="70%">
+        </div>
+        <div class="footer">
+            <div id="footer_text">
+                <div>
+                    <h3>About</h3>
+                    <ul>
+                        <ol>Home</ol>
+                        <ol>Shop</ol>
+                        <ol>Our Story</ol>
+                        <ol>Blogs</ol>
+                    </ul>
+                    <option value="English"></option>
+                </div>
+                <div>
+                    <h3>Help</h3>
+                    <ul>
+                        <ol>Shipping & Returns</ol>
+                        <ol>Track Order</ol>
+                        <ol>FAQs</ol>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <ul>
+                        <ol>Phone: (+1) 123 456 7893</ol>
+                        <ol>Email: name@gmail.com</ol>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h2>Receive new promotions</h2>
+                <p>Duis ea tempor commondo amet reprehende</p>
+                <input type="text" placeholder="Input your email">
+                <button>Subscribe</button>
+                <div id="social_media">
+                    <img src="./promotions_images/Twitter 1.png" alt="">
+                    <img src="./promotions_images/Facebook 1.png" alt="">
+                    <img src="./promotions_images/LinkedIn 1.png" alt="">
+                    <img src="./promotions_images/YouTube 1.png" alt="">
+                </div>
+                <p>Ⓒ 2022 Brand,Inc. • Privacy • Terms • Sitemap</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

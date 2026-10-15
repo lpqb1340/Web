@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hide {
+        display: none;
+    }
+    
+    .show {
+        display: flex;
+    }
+</style>
+
+<body>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <img id="img" src="../images/dessertweb.jpg" alt="">
+
+    <script>
+        var hide = document.getElementById('hide')
+        var show = document.getElementById('show')
+
+        hide.onclick = () => {
+            img.classList.remove('show')
+            img.classList.add('hide')
+        }
+
+        show.onclick = () => {
+            img.classList.remove('hide')
+            img.classList.add('show')
+        }
+    </script>
+</body>
+
+</html>
