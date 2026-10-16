@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id="inputText" placeholder="Nhập MSSV gồm 10 chữ số">
+    <button id="addButton">Add</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#addButton').click(function() {
+                var inputText = $('#inputText').val();
+                var pattern = /^[0-9]{10}$/;
+                var isValid = pattern.test(inputText);
+
+                if (isValid) {
+                    $('#inputText').css({
+                        'color': 'black',
+                        'border-color': '2px solid green'
+                    });
+                } else {
+                    alert('Vui lòng chỉ nhập các chữ số hợp lệ!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
